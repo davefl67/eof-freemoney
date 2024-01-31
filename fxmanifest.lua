@@ -1,15 +1,25 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'TheStoicBear'
-description 'codex-freemoney Free Money every 1 hour'
+author 'davefl67		https://github.com/davefl67/eof-freemoney'
+credit 'TheStoicBear	https://github.com/5M-CodeX/codex-freemoney'
+description 'Pays out free money. Defaults to $10000 every 8 hours (configurable)'
 version '1.0.0'
-
--- Define the resource metadata
-resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+lua54 'yes'
 
 -- Specify the server script
-server_script 'server.lua'
+client_script {
+	'client.lua'
+}
+
+-- Specify the server scripts
+server_script {
+	'server.lua'
+}
+
+-- Specify shared scripts & libraries
 shared_scripts {
-    "@ND_Core/shared/import.lua"
+	'config.lua'
+    '@ND_Core/shared/import.lua',
+    '@ox_lib/init.lua'
 }
